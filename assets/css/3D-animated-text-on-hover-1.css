@@ -1,0 +1,35 @@
+h1 {
+  background-color: #677176;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 100vw;
+  height: 700px;
+  font: 900 120px/1 'Source Sans Pro', Arial, sans-serif;
+  text-transform: uppercase;
+  line-height: 900px;
+  white-space: nowrap;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  --x-dist: 5px;
+  --y-dist: 7px;
+  --bg-dist: 10px;
+  text-shadow: 1px 1px #bdbdbd, 
+                2px 2px #bdbdbd, 
+                3px 3px #bdbdbd, 
+                4px 4px #bdbdbd, 
+                5px 5px #bdbdbd, 
+                5px 5px #bdbdbd,
+var(--x, 0) calc(var(--y, var(--bg-dist)) * .5) var(--bg-dist) rgba(0,0,0,.2),
+var(--x, 0) var(--y, var(--bg-dist)) var(--bg-dist) rgba(0,0,0,.2),
+var(--x, 0) calc(var(--y, var(--bg-dist)) * 2) calc(var(--bg-dist) * 2) rgba(0,0,0,.3);
+}
+

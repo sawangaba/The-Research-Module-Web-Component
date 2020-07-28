@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>About</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/3D-animated-text-on-hover-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+	<link rel="stylesheet" href="assets/css/size_and_footer.css">
+    
+    
+    <style>
+        *{
+            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       .content{
+          
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            min-height: 100vh;
+            background: #000;
+            
+            
+        }
+        .box{
+            
+            position: relative;
+            width: 400px;
+            height: 500px;
+            transform-style: preserve-3d;
+            animation: animate 15s linear infinite;
+            
+        }
+        @keyframes animate
+        {
+            
+            0%{
+                transform: perspective(1500px) rotateY(0deg);
+            }
+            100%{
+                transform: perspective(1500px) rotateY(360deg);
+            }
+            
+        }
+    
+        .box span{
+            
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+        transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i) * 70deg)) translateZ(300px);
+        }
+        .box span img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit:contain;
+         }
+        .box:hover {
+  animation-play-state: paused;
+}
+    
+    </style>
+    
+</head>
+
+<body>
+    
+    <div class="content">
+    <br>
+    <div class="box">
+        
+        <span style="--i:1;"><div><img src="other.png"></div></span>
+        <span style="--i:2;"><div><img src="shivi.png"></div></span>
+        <span style="--i:3;"><div><img src="naman.png"></div></span>
+        <span style="--i:4;"><div><img src="sawan.png"></div></span>
+        <span style="--i:5;"><div><img src="about.png"></div></span>
+        
+        
+        </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+  
+</body>
+
+</html>

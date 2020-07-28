@@ -1,0 +1,20 @@
+
+  
+        .passerror{
+         background: #f7f9fc; 
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 42px;
+         border: 2px solid red;
+      margin-top: 8px;
+            width: 873px;
+            margin-bottom: 8px;
+      
+    }
+
+            
+    

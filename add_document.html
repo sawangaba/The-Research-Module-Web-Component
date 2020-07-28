@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Add Document</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/3D-animated-text-on-hover-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+	<link rel="stylesheet" href="assets/css/size_and_footer.css">
+      <script src="assets\js\script1.js"></script> 
+    <script src="assets\js\script2.js"></script>
+    <script src="assets\js\institute.js"></script>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets\js\check.js"></script>
+    
+    <SCRIPT language="javascript">
+        var counter = 2;
+function add(type) {
+
+    
+    if(counter<6){
+        //Create an input type dynamically.
+	var element = document.createElement("input");
+   var element2 = document.createElement("br");
+
+	//Assign different attributes to the element.
+	element.setAttribute("type", type);
+	element.setAttribute("placeholder", 'author'.concat(counter));
+	element.setAttribute("name", 'author'.concat(counter));
+
+    
+   
+
+	var foo = document.getElementById("fooBar");
+ 
+
+    foo.appendChild(element);
+    foo.appendChild(element2);
+
+    counter++;
+}
+else{
+    document.getElementById("addd").disabled=true;
+}
+	
+	//Append the element in page (in span).
+	
+   
+}
+</SCRIPT>
+  
+   
+<script>
+
+
+    function fetch(){
+var vv=document.getElementById('enter_doi').value;
+    
+//10.19173/irrodl.v16i1.1953
+    
+$.ajax({
+  
+    headers: { 
+        Accept : "application/vnd.citationstyles.csl+json"
+        
+        
+    },
+    
+    type: "GET",
+    
+    url: "https://doi.org/"+vv,
+    success: function (data) {
+        if (data){
+		var vv= JSON.stringify(data,null,'  ');
+		var cc= JSON.parse(vv);
+		var publisher= cc.publisher;
+		var title= cc.title;
+		var url= cc.URL;
+         var pissn= cc.ISSN[0];
+            var eissn= cc.ISSN[1];
+            $("#publish").val(publisher);
+            $("#title").val(title);
+            $("#url").val(url);
+            $("#pissn").val(pissn);
+            $("#eissn").val(eissn);
+        }else{
+            alert("Problem fetching the data from DOI");           
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown )	 {
+     	 alert("Problem fetching the data from DOI");
+    }
+});
+    }
+</script>
+    
+    
+    
+<style>
+    
+    <style>
+	
+	@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+    
+  font-family: Roboto;
+}
+
+    input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+     
+     select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+    
+section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 60vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+
+    
+    </style>
+
+
+</head>
+
+<body>
+    
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="margin-left: -40%;"><img data-bs-hover-animate="pulse" src="assets/img/University-Logo.jpg" style="width: 280px;margin: 0px;margin-top: 18px;margin-left: 38px;"></div>
+                <div class="col-md-6">
+                    <h1 style="width: 463px;font-size: 75px;height: 484px;margin: -166px;margin-right: -135px;margin-left: 0px;margin-top: -171px;background-color: rgb(255,255,255);color: rgb(99,97,97);">The &nbsp;research &nbsp;centre</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: #fc0000; z-index:1;">
+            <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse text-left" id="navcol-1" style="background-color: #fc0000;color: rgb(255,255,255);width: 1173px;margin-left: -421px;margin-right: -398px;padding-left: 9px;padding-right: 4px;font-size: 20px;">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a  class="nav-link" href="home.php" style="color: rgb(255,255,255);">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="feedback.php" style="color: rgb(255,255,255);">Feedback</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="faq.php" style="color: rgb(255,255,255);">FAQ</a></li>
+                         <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgb(255,255,255);">Profile&nbsp; &nbsp; &nbsp;</a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="edit_info.php">Edit Info</a><a style="background-color: dimgray; color: rgb(255,255,255);" class="dropdown-item" role="presentation" href="forgot_password.html">Change Password</a></div>
+                        </li>
+                        <li class="dropdown nav-item"><a class="nav-link active" aria-expanded="false" href="add_document.html" style="color: black;">Add Document&nbsp;</a>
+                           
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="col" style=" width: 100%;">
+        <div class="container" style="margin-top: -150px;">
+            <div class="row">
+                <div class="col-md-12" style="height: 100%;">
+                   
+                    
+                    <form class="add" action="add_doc.php" method="POST" enctype="multipart/form-data">
+  <table>
+   <tr>
+   
+   	<td><h2>Journal Details</h2></td>
+   	<td></td>
+   	<td></td>
+   	<td style="margin-top:100px;"><h2>Affiliation</h2></td>
+   </tr>
+   <tr>
+   	<td>DOI :</td>
+   	<td><input name="doi" id="enter_doi" style="margin-left: 1px;" type="text" placeholder="Example: 10.1126/science.169.3946.635" title="Having a DOI? Enter DOI and try fetch to fill details automatically"><INPUT type="button" id="search_doi" value="Fetch" onclick="fetch()"/> </td>
+       
+      
+       	<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+
+<!--
+	<td><input type="checkbox" name="UGC_Journal">
+    	<label >UGC Journal</label></td>
+-->
+       <td><input type="checkbox" name="MMDU_Affiliation">
+   		<label >Is Article having MMDU Affilation</label></td>
+   </tr>
+   <tr>
+    <td>Author Name :</td>
+    <td><input style="margin-top: 2.4px; margin-left: 1px;" type="text" name="author1" required><INPUT type="button" id="addd" value="Add" onclick="add('text')"/></td>
+    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+
+<!--
+	<td><input type="checkbox" name="GS_Indexed">
+    	<label >Google Scholar Indexed</label></td>
+    <td></td>
+-->
+    <td><input type="checkbox" name="MMDU_sw"> 
+    	<label >Belongs to MMDU Student Work</label></td>   
+   </tr>
+      <tr>
+    <td></td>
+    <td><span id="fooBar"></span></td>
+    <td></td>
+<!--
+    <td><input type="checkbox" name="MMDU_sw"> 
+    	<label >MMDU Student Work</label></td>
+   </tr>
+-->
+     <td></td>
+   </tr>  
+      
+   <tr>
+   	<tr>
+   	<td></td>
+	
+   	<td></td>
+   	<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+   
+<!--
+        <td><input type="checkbox" name="MMDU_Affiliation">
+   		<label > MMDU Affiliated</label></td>
+-->
+      <td><input type="checkbox" name="AreYou_FA">
+    	<label >Are You the first Author?</label></td>
+   </tr>   
+   </tr>
+   <tr>
+    <td>Manuscript Title : </td>
+    <td><input id="title" style="margin-left: 1px;" type="text" name="manuscript" required></td>
+    <td></td>
+<!--
+    <td><input type="checkbox" name="MMDU_sw"> 
+    	<label >MMDU Student Work</label></td>
+   </tr>
+-->
+     <td><input type="checkbox" name="C_Author">
+    	<label >Corrosponding Author</label></td>
+   </tr>   
+   <tr>
+    <td>Full Journal Name : </td>
+    <td><input  style="margin-left: 1px;" type="text" name="full_JN" required></td>
+    <td></td>
+<!--
+    <td><input type="checkbox" name="AreYou_FA">
+    	<label >Are You the first Author?</label></td>
+   </tr>
+-->
+       <td><input type="checkbox" name="Guide_toC">
+    	<label >Guide of any Co-Author</label></td>
+   </tr>
+   <tr>
+    <td>Publisher : </td>
+    <td><input style="margin-top: 0px; margin-left: 1px;" type="text" id="publish" name="publisher" required></td>
+    <td></td>
+<!--
+    <td><input type="checkbox" name="C_Author">
+    	<label >Any co-author?</label></td>
+   </tr>
+-->
+       <td><label ><h2>Journal Indexing</h2></label><br><br><input type="checkbox" name="UGC_Journal">
+    	<label >UGC Care List</label></td>
+   <tr>
+    <td>Publication Type :</td>
+    <td>
+     <select style="margin-top: 4.4px; margin-left: 1px;" id="ptype" name="p_type">
+      <option value="Internation Journal" selected>Internation Journal</option>
+      <option value="National Journal">National Journal</option>
+      <option value="Internation Conference">Internation Conference</option>
+         <option value="National Conference">National Conference</option>
+    </select>
+    </td>
+    <td></td>
+<!--
+    <td><input type="checkbox" name="Guide_toC">
+    	<label >Involvement of any co-author</label></td>
+   </tr>
+-->
+    <td><input type="checkbox" name="GS_Indexed">
+    	<label >Google Scholar Indexed</label></td>
+    <td></td>   
+   <tr>
+    <td>Publication Status :</td>
+    <td>
+    <select style="margin-top: 2.4px; margin-left: 1px;" id="pstatus" name="p_status">
+    <option value="Published" selected>Published</option>
+      <option value="Accepted">Accepted</option>
+    </select>
+    </td>
+    <td></td>
+    <td><input type="checkbox" name="PubMed">
+    	<label >Is the type of article is PubMed?</label></td>
+   </tr>
+   <tr>
+   	<td>Year :</td>
+   	<td>
+   		<select style="margin-top: 1.4px; margin-left: 1px;" id="ddlYears" name="year" required></select>
+   	</td>
+   	<td></td>
+    <td><input type="checkbox" name="IndexCopernicus">
+    	<label >Index Copernicus</label></td>
+   </tr>
+   <tr> 
+   	<td>Month :</td>
+   	<td>
+     <select style=" margin-left: 1px;" id="month" name="month" required>
+      <option selected hidden value="None">--None--</option>
+      <option>January</option>
+      <option>Febuary</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+     </select>
+    </td>
+    <td></td>
+    <td><input type="checkbox" name="Scopus_Indexed">
+    	<label >Scopus Indexed</label></td>
+   </tr>
+   <tr>
+   	<td>E-ISSN :</td>
+   	<td><input style=" margin-top: 0px; margin-left: 1px;" type="text" id="eissn" name="E_ISSN" required></td>
+   	<td></td>
+    <td><input type="checkbox" name="SCI_SCIE_SSCI_Indexed">
+    	<label >SCI SCIE SSCI Indexed</label></td>
+   </tr>
+   <tr>
+   	<td>P-ISSN :</td>
+   	<td><input  style="margin-top: 0px; margin-left: 1px;" type="text" id="pissn" name="P_ISSN" required><br></td>
+   	<td></td>
+    
+   </tr>
+   <tr>
+   	<tr>
+   	<td>Arti Web Link :</td>
+   	<td><input id="url" style="margin-top: 0px; margin-left: 1px;" type="text" name="web_link" required></td>
+   	<td></td>
+   
+   </tr>
+  <br>
+     
+  </table><br><br><br>
+                        <label style=" margin-left: 50px">Insert image of first page of the document.</label><br>
+                         <img src="" id= "image" class="img-fluid border rounded" name="bv" style=" width: 400px;height: 400px; position:relative; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" id="files" name="images"/><br><label style="color: red">*Note:- Make sure to rename the image file according to the document before uploading.</label><br><br>
+                        
+                        <script>
+        function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#image').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#files").change(function(){
+    readURL(this);
+});
+      </script>
+                       <br> 
+                        <input style=" margin-left: 50%; width: 10%" type="submit">
+                        
+                        
+                        
+                   <br>  
+                        
+                       
+ </form>
+
+ <script type="text/javascript">
+    window.onload = function () {
+        //Reference the DropDownList.
+        var ddlYears = document.getElementById("ddlYears");
+ 
+        //Determine the Current Year.
+        var currentYear = (new Date()).getFullYear();
+ 
+        //Loop and add the Year values to DropDownList.
+        for (var i = 1960; i <= currentYear; i++) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            ddlYears.appendChild(option);
+        }
+
+    };
+</script>
+                   
+
+                  
+                    
+                        </div>
+                    
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+
+<footer class="footer-distributed">
+
+			<div class="footer-right">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-github"></i></a>
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a class="link-1" href="home.php">Home</a>
+
+					<a href="feedback.php">Feedback</a>
+
+					<a href="faq.php">FAQ</a>
+					<a href="about.html" target="_blank">About</a>
+
+				
+				</p>
+
+				<p>Maharishi Markandeshwar (Deemed to be University) &copy; 2020</p>
+			</div>
+
+		</footer>
+
+</body>
+
+</html>
